@@ -1,0 +1,734 @@
+:root {
+    --primary-color: #10b981; /* Warna hijau utama (Emerald) */
+    --primary-hover: #059669; /* Warna hijau saat tombol di-hover */
+    --bg-light: #f0fdf4;      /* Background soft hijau muda */
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ===================================
+   Navbar Style
+   =================================== */
+.navbar {
+    padding: 20px 0;
+    background: rgba(248, 249, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.navbar-brand span {
+    color: var(--text-dark);
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.btn-nav-contact {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-contact:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ===================================
+   Hero Section Style
+   =================================== */
+.hero-section {
+    padding: 120px 0 60px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(91, 70, 232, 0.1);
+    color: var(--primary-color);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: var(--primary-color);
+}
+
+.hero-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 32px;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(91, 70, 232, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary-custom {
+    color: var(--text-dark);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.btn-secondary-custom:hover {
+    color: var(--primary-color);
+}
+
+/* Photo Display Frame (Perbaikan Foto Pas & Proporsional) */
+.hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card-bg {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 30px;
+    position: relative;
+    padding: 24px 24px 35px 24px;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+}
+
+.polaroid-frame {
+    background: #fff;
+    padding: 12px 12px 15px 12px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.polaroid-frame:hover {
+    transform: rotate(-3deg) scale(1.02);
+}
+
+.polaroid-frame img {
+    width: 100%;
+    height: 380px; /* Menambah tinggi bingkai foto */
+    object-fit: cover;
+    object-position: top center; /* Menjaga fokus gambar dari atas/kepala */
+    border-radius: 12px;
+    display: block;
+}
+
+.tag-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 5px;
+    background: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    z-index: 3;
+}
+
+/* ===================================
+   About Section Style
+   =================================== */
+.about-section {
+    background-color: #ffffff;
+    border-radius: 40px 40px 0 0;
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.about-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.about-title span {
+    color: var(--primary-color);
+}
+
+.about-text {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* About Card Right */
+.about-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 15px 35px rgba(91, 70, 232, 0.06);
+    position: relative;
+}
+
+.card-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(91, 70, 232, 0.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.card-dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    margin-left: 4px;
+}
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+    background-color: rgba(91, 70, 232, 0.08);
+    color: var(--primary-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.info-item small {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+/* Resume Box inside Card */
+.resume-box {
+    background: #f8f9ff;
+    border: 1px dashed rgba(91, 70, 232, 0.3);
+    border-radius: 16px;
+}
+
+.resume-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* ===================================
+   Skills Section Style
+   =================================== */
+.skills-section {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.section-title span {
+    color: var(--primary-color);
+}
+
+.skills-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(91, 70, 232, 0.08);
+}
+
+.card-header-custom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(91, 70, 232, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Skill Box List */
+.skill-item-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #f8f9ff;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+}
+
+.skill-icon {
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+}
+
+/* Tech Grid Layout */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.tech-item {
+    background: #f8f9ff;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.tech-item:hover {
+    background: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(91, 70, 232, 0.1);
+}
+
+.tech-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.tech-item span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* Styling Ukuran Ikon Gambar */
+.category-icon img,
+.info-icon img,
+.skill-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.resume-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.tech-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* ===================================
+   Portfolio / Project Section Style
+   =================================== */
+.portfolio-section {
+    background-color: #ffffff;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(91, 70, 232, 0.12);
+}
+
+.project-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    aspect-ratio: 16 / 10;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.06);
+}
+
+.project-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-category {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+
+.project-title {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge-tech {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: var(--text-dark);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover .badge-tech {
+    background: #eef2ff;
+    border-color: rgba(91, 70, 232, 0.2);
+}
+
+/* ===================================
+   Experience & Timeline Style (Fixed)
+   =================================== */
+.experience-section {
+    background-color: var(--bg-light);
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: #e2e8f0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: left; /* Menjaga teks agar tetap mudah dibaca */
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Bulatan Bulat di Garis Tengah */
+.timeline-dot {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    right: -21px;
+    background: var(--primary-color);
+    border: 4px solid #ffffff;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(91, 70, 232, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -21px;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(91, 70, 232, 0.5);
+}
+
+.timeline-dot img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* Card Timeline & Posisi Badge Tahun */
+.timeline-content {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(91, 70, 232, 0.08);
+}
+
+.badge-year {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(91, 70, 232, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Responsif Mobile ( Tampilan 1 Kolom ) */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 15px;
+    }
+    
+    .timeline-item.left, 
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+    
+    .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 10px;
+    }
+}
+
+/* ===================================
+   Contact & Footer Style
+   =================================== */
+.contact-section {
+    background-color: var(--bg-light);
+}
+
+.contact-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 32px;
+    box-shadow: 0 15px 35px rgba(91, 70, 232, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.contact-title span {
+    color: var(--primary-color);
+}
+
+/* Social Media Hover Buttons */
+.social-btn {
+    width: 52px;
+    height: 52px;
+    background: #f8f9ff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.social-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(91, 70, 232, 0.3);
+}
+
+.social-btn:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.contact-signature span {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+/* Footer Style */
+.footer-section {
+    background: #ffffff;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color) !important;
+}
+
+.social-btn i {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.social-btn:hover i {
+    color: #ffffff;
+}
+
+/* Shadow kartu tentang saya */
+.about-card {
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.08);
+}
+
+/* Shadow kartu keahlian & proyek saat di-hover */
+.skills-card:hover, 
+.project-card:hover, 
+.timeline-content:hover {
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12);
+}
+
+/* Bulatan Timeline & Tombol Medsos Kontak */
+.timeline-dot {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.timeline-item:hover .timeline-dot {
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
+}
+
+.social-btn:hover {
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
